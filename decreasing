@@ -1,0 +1,23 @@
+def most_frequent(string): 
+  # Create an empty dictionary 
+  dict = {} 
+  
+  # Loop through characters in the string 
+  for char in string: 
+    
+    # Create a key in the dictionary and assign its value to 0 
+    if char not in dict: 
+      dict[char] = 0
+    
+    # Increment the value of the character in the dictionary 
+    dict[char] += 1
+  
+  # Sort the dictionary by value in descending order 
+  most_frequent_chars = sorted(dict.items(), key=lambda x: x[1], reverse=True)
+  
+  # Print the characters in decreasing order of frequency 
+  for char, count in most_frequent_chars: 
+    print(char, count) 
+    
+# Call the function 
+most_frequent('mississippi')
